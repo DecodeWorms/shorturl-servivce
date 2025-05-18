@@ -1,0 +1,43 @@
+version: "3.9"
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8001:8001"
+    networks:
+      - url-shortener.sv-network
+    container_name: url-shortener.sv-container
+    depends_on:
+      - mongodb-container
+      - redis-container
+
+  mongodb-container:
+    image: mongo
+    container_name: mongodb-container
+    ports:
+      - "27017:27017"
+    networks:
+      - rescue-support.sv-network
+    volumes:
+      - mongo-data:/data/db
+
+  redis-container:
+    image: redis
+    container_name: redis-container
+    ports:
+      - "6379:6379"
+    networks:
+      - rescue-support.sv-network
+    volumes:
+      - redis-data:/data
+
+
+
+networks:
+  url-shortener.sv-network:
+
+volumes:
+  mongo-data:
+  redis-data:

@@ -64,10 +64,10 @@ func SetUpRouter(user *handler.UserHandler, url *handler.UrlHandler) *gin.Engine
 
 	api := router.Group("/api/v1")
 	{
-		// API endpoint(s) for accessing a user resource
+		// API endpoint(s) for accessing a user resources
 		api.POST("/user", user.CreateUser())
 
-		//API endpoints for accessing url resource
+		//API endpoints for accessing url resources
 		api.POST("/url", url.GenerateShortUrl())
 		api.GET("/url", url.Redirect())
 	}
