@@ -19,7 +19,7 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - rescue-support.sv-network
+      - url-shortener.sv-network
     volumes:
       - mongo-data:/data/db
 
@@ -29,7 +29,7 @@ services:
     ports:
       - "6379:6379"
     networks:
-      - rescue-support.sv-network
+      - url-shortener.sv-network
     volumes:
       - redis-data:/data
 
