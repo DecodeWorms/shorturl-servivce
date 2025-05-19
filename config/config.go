@@ -79,7 +79,7 @@ func ImportConfig(source source) Config {
 	port := source.GetEnv(servicePort, "")
 	databaseName := source.GetEnv(databaseName, "appservices")
 	databaseURL := source.GetEnv(databaseURL, "mongodb://127.0.0.1:27017")
-	serviceName := source.GetEnv(serviceName, "rescue-support.sv")
+	serviceName := source.GetEnv(serviceName, "url-sh")
 	redisAdd := source.GetEnv(redisAddress, "")
 	redisPass := source.GetEnv(redisPassword, "")
 	redisDb := source.GetEnvInt(redisDB, 0)
